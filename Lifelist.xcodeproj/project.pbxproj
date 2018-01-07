@@ -11,6 +11,8 @@
 		AB3B54222002A24200CC9784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54202002A24200CC9784 /* Main.storyboard */; };
 		AB3B54242002A24200CC9784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54232002A24200CC9784 /* Assets.xcassets */; };
 		AB3B54272002A24200CC9784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54252002A24200CC9784 /* LaunchScreen.storyboard */; };
+		AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */; };
+		AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54352002B03500CC9784 /* LifelistController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		AB3B54232002A24200CC9784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB3B54262002A24200CC9784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB3B54282002A24200CC9784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifelist.xcdatamodel; sourceTree = "<group>"; };
+		AB3B54352002B03500CC9784 /* LifelistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				AB3B54232002A24200CC9784 /* Assets.xcassets */,
 				AB3B54252002A24200CC9784 /* LaunchScreen.storyboard */,
 				AB3B54282002A24200CC9784 /* Info.plist */,
+				AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */,
+				AB3B54352002B03500CC9784 /* LifelistController.swift */,
 			);
 			path = Lifelist;
 			sourceTree = "<group>";
@@ -133,7 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */,
 				AB3B541B2002A24200CC9784 /* AppDelegate.swift in Sources */,
+				AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +326,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */,
+			);
+			currentVersion = AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */;
+			path = Lifelist.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AB3B540F2002A24200CC9784 /* Project object */;
 }
