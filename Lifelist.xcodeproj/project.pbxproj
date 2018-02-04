@@ -13,6 +13,7 @@
 		AB3B54272002A24200CC9784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54252002A24200CC9784 /* LaunchScreen.storyboard */; };
 		AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */; };
 		AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54352002B03500CC9784 /* LifelistController.swift */; };
+		AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AB3B54282002A24200CC9784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifelist.xcdatamodel; sourceTree = "<group>"; };
 		AB3B54352002B03500CC9784 /* LifelistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistController.swift; sourceTree = "<group>"; };
+		AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				AB3B54282002A24200CC9784 /* Info.plist */,
 				AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */,
 				AB3B54352002B03500CC9784 /* LifelistController.swift */,
+				AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */,
 			);
 			path = Lifelist;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */,
 				AB3B541B2002A24200CC9784 /* AppDelegate.swift in Sources */,
 				AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */,
+				AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

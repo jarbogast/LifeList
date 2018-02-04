@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let container = NSPersistentContainer(name: "Lifelist")
+        let container = NSPersistentContainer(name: "Lifel ist")
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Failed to load Core Data stack: \(error)")

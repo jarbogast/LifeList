@@ -10,5 +10,5 @@ import Foundation
 import CoreData
 
 protocol LifelistController: class {
-    var persistentContainer: NSPersistentContainer { get set }
+    var persistentContainer: NSPersistentContainer? { get set }
 }
