@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let container = NSPersistentContainer(name: "Lifelist")
         container.loadPersistentStores { (_, error) in
             if let error = error {
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             modelController.persistentContainer = container
         }
 
-        for childController in controller.childViewControllers {
+        for childController in controller.children {
             distributeModelToViewController(controller: childController, container: container)
         }
     }
