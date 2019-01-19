@@ -314,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J237JQ3KN;
 				INFOPLIST_FILE = Lifelist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anothercupofcocoa.Lifelist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J237JQ3KN;
 				INFOPLIST_FILE = Lifelist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anothercupofcocoa.Lifelist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
