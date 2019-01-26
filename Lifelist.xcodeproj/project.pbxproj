@@ -14,6 +14,7 @@
 		AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */; };
 		AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54352002B03500CC9784 /* LifelistController.swift */; };
 		AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */; };
+		AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */; };
 		ABCE08D421FCC8FC007F2C72 /* SightingComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */; };
 		ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifelist.xcdatamodel; sourceTree = "<group>"; };
 		AB3B54352002B03500CC9784 /* LifelistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistController.swift; sourceTree = "<group>"; };
 		AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsViewController.swift; sourceTree = "<group>"; };
+		AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingViewController.swift; sourceTree = "<group>"; };
 		ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingComposerViewController.swift; sourceTree = "<group>"; };
 		ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */,
 				ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */,
 				ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */,
+				AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */,
 			);
 			path = Lifelist;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				AB3B541B2002A24200CC9784 /* AppDelegate.swift in Sources */,
 				AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */,
 				ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */,
+				AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */,
 				AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */,
 				ABCE08D421FCC8FC007F2C72 /* SightingComposerViewController.swift in Sources */,
 			);
