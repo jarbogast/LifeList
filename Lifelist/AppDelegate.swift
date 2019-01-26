@@ -21,22 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error {
                 fatalError("Failed to load Core Data stack: \(error)")
             } else {
-                self.distributeModelToViewController(controller: self.window?.rootViewController, container: container)
+                distributeModelToViewController(controller: self.window?.rootViewController, container: container)
             }
         }
 
         return true
     }
 
-    func distributeModelToViewController(controller: UIViewController?, container: NSPersistentContainer) {
-        guard let controller = controller else { return }
+}
 
-        if let modelController = controller as? LifelistController {
-            modelController.persistentContainer = container
-        }
-
-        for childController in controller.children {
-            distributeModelToViewController(controller: childController, container: container)
-        }
+func distributeModelToViewController(controller: UIViewController?, container: NSPersistentContainer?) {
+    guard let controller = controller else { return }
+    
+    if let modelController = controller as? LifelistController {
+        modelController.persistentContainer = container
+    }
+    
+    for childController in controller.children {
+        distributeModelToViewController(controller: childController, container: container)
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 protocol LifelistController: class {
     var persistentContainer: NSPersistentContainer? { get set }

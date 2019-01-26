@@ -16,6 +16,7 @@ class SightingsViewController: UITableViewController, LifelistController {
     var persistentContainer: NSPersistentContainer? {
         didSet {
             let fetchRequest = NSFetchRequest<Sighting>(entityName: "Sighting")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "species", ascending: true)]
             if let context = persistentContainer?.viewContext {
                 fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                       managedObjectContext: context,
@@ -36,7 +37,8 @@ class SightingsViewController: UITableViewController, LifelistController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        super.prepare(for: segue, sender: sender)
+        distributeModelToViewController(controller: segue.destination, container: persistentContainer)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,7 +87,6 @@ class SightingsViewController: UITableViewController, LifelistController {
 
         cell.textLabel?.text = object.species
     }
-
 }
 
 extension SightingsViewController: NSFetchedResultsControllerDelegate {
