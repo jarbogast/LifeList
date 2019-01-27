@@ -15,9 +15,17 @@ final class SightingViewController: UITableViewController, LifelistController {
     var sighting: Sighting?
     
     @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         speciesLabel.text = sighting?.species
+        
+        if let date = sighting?.date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            dateLabel.text = formatter.string(from: date)
+        }
     }
 }

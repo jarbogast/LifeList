@@ -13,11 +13,18 @@ import CoreData
 final class SightingComposerViewController: UITableViewController, LifelistController {
     var persistentContainer: NSPersistentContainer?
     @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        if let species = speciesLabel.text, let context = persistentContainer?.viewContext {
+        if let species = speciesLabel.text, let dateString = dateLabel.text, let context = persistentContainer?.viewContext {
             let sighting = Sighting(context: context)
             sighting.species = species
+
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            sighting.date = formatter.date(from: dateString)
+
             try! context.save()
         }
         dismiss(animated: true, completion: nil)
@@ -29,8 +36,13 @@ final class SightingComposerViewController: UITableViewController, LifelistContr
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
         if let speciesViewController = segue.destination as? SpeciesViewController {
             speciesViewController.delegate = self
+        }
+        
+        if let datePickerViewController = segue.destination as? DatePickerViewController {
+            datePickerViewController.delegate = self
         }
     }
 }
@@ -39,4 +51,15 @@ extension SightingComposerViewController: SpeciesViewControllerDelegate {
     func selected(species: String) {
         speciesLabel.text = species
     }
+}
+
+extension SightingComposerViewController: DatePickerViewControllerDelegate {
+    func didPick(date: Date) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        dateLabel.text = formatter.string(from: date)
+    }
+    
+    
 }
