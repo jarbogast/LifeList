@@ -9,9 +9,14 @@
 import Foundation
 
 final class SightingDateFormatter: DateFormatter {
-    init() {
+    override init() {
         super.init()
         self.dateStyle = .medium
         self.timeStyle = .short
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
