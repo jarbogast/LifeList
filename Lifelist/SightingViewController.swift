@@ -22,9 +22,7 @@ final class SightingViewController: UITableViewController, LifelistController {
         speciesLabel.text = sighting?.species
         
         if let date = sighting?.date {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .short
+            let formatter = SightingDateFormatter()
             dateLabel.text = formatter.string(from: date)
         }
     }

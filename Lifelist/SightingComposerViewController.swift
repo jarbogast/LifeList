@@ -20,9 +20,7 @@ final class SightingComposerViewController: UITableViewController, LifelistContr
             let sighting = Sighting(context: context)
             sighting.species = species
 
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .short
+            let formatter = SightingDateFormatter()
             sighting.date = formatter.date(from: dateString)
 
             try! context.save()
@@ -55,9 +53,7 @@ extension SightingComposerViewController: SpeciesViewControllerDelegate {
 
 extension SightingComposerViewController: DatePickerViewControllerDelegate {
     func didPick(date: Date) {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
+        let formatter = SightingDateFormatter()
         dateLabel.text = formatter.string(from: date)
     }
     
