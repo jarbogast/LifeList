@@ -16,6 +16,7 @@ final class SightingViewController: UITableViewController, LifelistController {
     
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ final class SightingViewController: UITableViewController, LifelistController {
         if let date = sighting?.date {
             let formatter = SightingDateFormatter()
             dateLabel.text = formatter.string(from: date)
+        }
+        
+        if let data = sighting?.image {
+            imageView.image = UIImage(data: data)
         }
     }
 }
