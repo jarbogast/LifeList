@@ -10,12 +10,23 @@ import Foundation
 import UIKit
 import CoreData
 
-final class SightingViewController: UITableViewController, LifelistController {
+final class SightingViewController: UIViewController, LifelistController {
     var persistentContainer: NSPersistentContainer?
     var sighting: Sighting?
     
-    @IBOutlet weak var speciesLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel! {
+        didSet {
+            speciesLabel.layer.cornerRadius = 5
+            speciesLabel.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.layer.cornerRadius = 5
+            dateLabel.layer.masksToBounds = true
+        }
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -27,8 +38,8 @@ final class SightingViewController: UITableViewController, LifelistController {
             dateLabel.text = formatter.string(from: date)
         }
         
-        if let data = sighting?.image {
-            imageView.image = UIImage(data: data)
+        if let data = sighting?.image, let image = UIImage(data: data) {
+            imageView.image = image
         }
     }
 }
