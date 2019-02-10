@@ -42,4 +42,60 @@ final class SightingViewController: UIViewController, LifelistController {
             imageView.image = image
         }
     }
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        if let species = speciesLabel.text, let dateString = dateLabel.text, let context = persistentContainer?.viewContext {
+            let sighting = Sighting(context: context)
+            sighting.species = species
+            
+            let formatter = SightingDateFormatter()
+            sighting.date = formatter.date(from: dateString)
+            
+            sighting.image = imageView.image?.pngData()
+            
+            try! context.save()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let speciesViewController = segue.destination as? SpeciesViewController {
+            speciesViewController.delegate = self
+        }
+        
+        if let datePickerViewController = segue.destination as? DatePickerViewController {
+            datePickerViewController.delegate = self
+        }
+    }
+    
+    @IBAction func imageViewTapped() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
+    }
+}
+
+extension SightingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.originalImage] as? UIImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SightingViewController: SpeciesViewControllerDelegate {
+    func selected(species: String) {
+        speciesLabel.text = species
+    }
+}
+
+extension SightingViewController: DatePickerViewControllerDelegate {
+    func didPick(date: Date) {
+        let formatter = SightingDateFormatter()
+        dateLabel.text = formatter.string(from: date)
+    }
 }

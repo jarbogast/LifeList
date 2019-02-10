@@ -17,7 +17,6 @@
 		AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */; };
 		AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */; };
 		AB7F9E6721FE3E15000BFDCF /* SightingDateFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */; };
-		ABCE08D421FCC8FC007F2C72 /* SightingComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */; };
 		ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingViewController.swift; sourceTree = "<group>"; };
 		AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDateFomatter.swift; sourceTree = "<group>"; };
-		ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingComposerViewController.swift; sourceTree = "<group>"; };
 		ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +74,6 @@
 				AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */,
 				AB3B54352002B03500CC9784 /* LifelistController.swift */,
 				AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */,
-				ABCE08D321FCC8FC007F2C72 /* SightingComposerViewController.swift */,
 				ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */,
 				AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */,
 				AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */,
@@ -166,7 +163,6 @@
 				AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */,
 				AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */,
 				AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */,
-				ABCE08D421FCC8FC007F2C72 /* SightingComposerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
