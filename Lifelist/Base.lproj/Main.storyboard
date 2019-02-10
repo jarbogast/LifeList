@@ -57,7 +57,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-BP-Lmn">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sighting" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-BP-Lmn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -255,6 +255,9 @@
             <point key="canvasLocation" x="2601" y="782"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Sighting" width="612" height="792"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MK6-bc-Kyp"/>
     </inferredMetricsTieBreakers>
