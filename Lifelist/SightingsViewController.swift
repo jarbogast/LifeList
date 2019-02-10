@@ -83,6 +83,19 @@ class SightingsViewController: UITableViewController, LifelistController {
         }
         return result
     }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        guard let context = persistentContainer?.viewContext else { return }
+        guard let sighting = fetchedResultsController?.object(at: indexPath) else { return }
+        
+        context.delete(sighting)
+        try! context.save()
+    }
 
     func configure(cell: UITableViewCell, at indexPath: IndexPath) {
         guard let object = self.fetchedResultsController?.object(at: indexPath) else {

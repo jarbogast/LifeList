@@ -45,15 +45,17 @@ final class SightingViewController: UIViewController, LifelistController {
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let species = speciesLabel.text, let dateString = dateLabel.text, let context = persistentContainer?.viewContext {
-            let sighting = Sighting(context: context)
-            sighting.species = species
-            
-            let formatter = SightingDateFormatter()
-            sighting.date = formatter.date(from: dateString)
-            
-            sighting.image = imageView.image?.pngData()
-            
-            try! context.save()
+            if sighting == nil { sighting = Sighting(context: context) }
+            if let sighting = sighting {
+                sighting.species = species
+                
+                let formatter = SightingDateFormatter()
+                sighting.date = formatter.date(from: dateString)
+                
+                sighting.image = imageView.image?.pngData()
+                
+                try! context.save()
+            }
         }
         dismiss(animated: true, completion: nil)
     }
