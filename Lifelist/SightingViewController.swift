@@ -13,7 +13,7 @@ import CoreData
 final class SightingViewController: UIViewController, LifelistController {
     var persistentContainer: NSPersistentContainer?
     var sighting: Sighting?
-    
+
     @IBOutlet weak var speciesLabel: UILabel! {
         didSet {
             speciesLabel.layer.cornerRadius = 5
@@ -26,34 +26,34 @@ final class SightingViewController: UIViewController, LifelistController {
             dateLabel.layer.masksToBounds = true
         }
     }
-    
+
     @IBOutlet weak var imageView: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         speciesLabel.text = sighting?.species
-        
+
         if let date = sighting?.date {
             let formatter = SightingDateFormatter()
             dateLabel.text = formatter.string(from: date)
         }
-        
+
         if let data = sighting?.image, let image = UIImage(data: data) {
             imageView.image = image
         }
     }
-    
+
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let species = speciesLabel.text, let dateString = dateLabel.text, let context = persistentContainer?.viewContext {
             if sighting == nil { sighting = Sighting(context: context) }
             if let sighting = sighting {
                 sighting.species = species
-                
+
                 let formatter = SightingDateFormatter()
                 sighting.date = formatter.date(from: dateString)
-                
+
                 sighting.image = imageView.image?.pngData()
-                
+
                 try! context.save()
             }
         }
@@ -62,19 +62,19 @@ final class SightingViewController: UIViewController, LifelistController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
+
         if let speciesViewController = segue.destination as? SpeciesViewController {
             speciesViewController.delegate = self
         }
-        
+
         if let datePickerViewController = segue.destination as? DatePickerViewController {
             datePickerViewController.delegate = self
         }
     }
-    
+
     @IBAction func imageViewTapped() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
-        
+
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -83,7 +83,7 @@ final class SightingViewController: UIViewController, LifelistController {
 }
 
 extension SightingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         imageView.image = info[.originalImage] as? UIImage
         picker.dismiss(animated: true, completion: nil)
     }

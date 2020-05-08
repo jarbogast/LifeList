@@ -39,7 +39,7 @@ class SightingsViewController: UITableViewController, LifelistController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         distributeModelToViewController(controller: segue.destination, container: persistentContainer)
-        
+
         if let sightingController = segue.destination as? SightingViewController, let cell = sender as? UITableViewCell {
             sightingController.sighting = fetchedResultsController?.object(at: tableView.indexPath(for: cell)!)
         }
@@ -83,16 +83,16 @@ class SightingsViewController: UITableViewController, LifelistController {
         }
         return result
     }
-    
+
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         guard let context = persistentContainer?.viewContext else { return }
         guard let sighting = fetchedResultsController?.object(at: indexPath) else { return }
-        
+
         context.delete(sighting)
         try! context.save()
     }

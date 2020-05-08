@@ -16,9 +16,9 @@ protocol DatePickerViewControllerDelegate: class {
 final class DatePickerViewController: UIViewController {
     weak var delegate: DatePickerViewControllerDelegate?
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         delegate?.didPick(date: datePicker.date)
     }
-    
+
 }
