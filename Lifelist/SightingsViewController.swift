@@ -94,7 +94,11 @@ class SightingsViewController: UITableViewController, LifelistController {
         guard let sighting = fetchedResultsController?.object(at: indexPath) else { return }
 
         context.delete(sighting)
-        try! context.save()
+        do {
+            try context.save()
+        } catch {
+            print("Error while saving context: \(error)")
+        }
     }
 
     func configure(cell: UITableViewCell, at indexPath: IndexPath) {

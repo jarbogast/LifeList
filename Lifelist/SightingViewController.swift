@@ -51,10 +51,13 @@ final class SightingViewController: UIViewController, LifelistController {
 
                 let formatter = SightingDateFormatter()
                 sighting.date = formatter.date(from: dateString)
-
                 sighting.image = imageView.image?.pngData()
 
-                try! context.save()
+                do {
+                    try context.save()
+                } catch {
+                    print("Error while saving context: \(error)")
+                }
             }
         }
         dismiss(animated: true, completion: nil)
