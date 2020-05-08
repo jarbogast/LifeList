@@ -14,11 +14,22 @@
 		AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB3B542E2002AAAF00CC9784 /* Lifelist.xcdatamodeld */; };
 		AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54352002B03500CC9784 /* LifelistController.swift */; };
 		AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */; };
+		AB54DFB72465E59E0069B9C9 /* LifelistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54DFB62465E59E0069B9C9 /* LifelistTests.swift */; };
 		AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */; };
 		AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */; };
 		AB7F9E6721FE3E15000BFDCF /* SightingDateFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */; };
 		ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB54DFB92465E59E0069B9C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB3B540F2002A24200CC9784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB3B54162002A24200CC9784;
+			remoteInfo = Lifelist;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB3B54172002A24200CC9784 /* Lifelist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifelist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +41,9 @@
 		AB3B542F2002AAAF00CC9784 /* Lifelist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifelist.xcdatamodel; sourceTree = "<group>"; };
 		AB3B54352002B03500CC9784 /* LifelistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistController.swift; sourceTree = "<group>"; };
 		AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsViewController.swift; sourceTree = "<group>"; };
+		AB54DFB42465E59E0069B9C9 /* LifelistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifelistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB54DFB62465E59E0069B9C9 /* LifelistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistTests.swift; sourceTree = "<group>"; };
+		AB54DFB82465E59E0069B9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingViewController.swift; sourceTree = "<group>"; };
 		AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDateFomatter.swift; sourceTree = "<group>"; };
@@ -44,6 +58,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB54DFB12465E59E0069B9C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3B54192002A24200CC9784 /* Lifelist */,
+				AB54DFB52465E59E0069B9C9 /* LifelistTests */,
 				AB3B54182002A24200CC9784 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3B54172002A24200CC9784 /* Lifelist.app */,
+				AB54DFB42465E59E0069B9C9 /* LifelistTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +105,15 @@
 			path = Lifelist;
 			sourceTree = "<group>";
 		};
+		AB54DFB52465E59E0069B9C9 /* LifelistTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB54DFB62465E59E0069B9C9 /* LifelistTests.swift */,
+				AB54DFB82465E59E0069B9C9 /* Info.plist */,
+			);
+			path = LifelistTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,13 +134,31 @@
 			productReference = AB3B54172002A24200CC9784 /* Lifelist.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AB54DFB32465E59E0069B9C9 /* LifelistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB54DFBD2465E59E0069B9C9 /* Build configuration list for PBXNativeTarget "LifelistTests" */;
+			buildPhases = (
+				AB54DFB02465E59E0069B9C9 /* Sources */,
+				AB54DFB12465E59E0069B9C9 /* Frameworks */,
+				AB54DFB22465E59E0069B9C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB54DFBA2465E59E0069B9C9 /* PBXTargetDependency */,
+			);
+			name = LifelistTests;
+			productName = LifelistTests;
+			productReference = AB54DFB42465E59E0069B9C9 /* LifelistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AB3B540F2002A24200CC9784 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Jonathan Arbogast";
 				TargetAttributes = {
@@ -116,6 +166,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+					};
+					AB54DFB32465E59E0069B9C9 = {
+						CreatedOnToolsVersion = 11.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AB3B54162002A24200CC9784;
 					};
 				};
 			};
@@ -133,6 +188,7 @@
 			projectRoot = "";
 			targets = (
 				AB3B54162002A24200CC9784 /* Lifelist */,
+				AB54DFB32465E59E0069B9C9 /* LifelistTests */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +201,13 @@
 				AB3B54272002A24200CC9784 /* LaunchScreen.storyboard in Resources */,
 				AB3B54242002A24200CC9784 /* Assets.xcassets in Resources */,
 				AB3B54222002A24200CC9784 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB54DFB22465E59E0069B9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +229,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB54DFB02465E59E0069B9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB54DFB72465E59E0069B9C9 /* LifelistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB54DFBA2465E59E0069B9C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB3B54162002A24200CC9784 /* Lifelist */;
+			targetProxy = AB54DFB92465E59E0069B9C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB3B54202002A24200CC9784 /* Main.storyboard */ = {
@@ -341,6 +420,45 @@
 			};
 			name = Release;
 		};
+		AB54DFBB2465E59E0069B9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J237JQ3KN;
+				INFOPLIST_FILE = LifelistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwarebyassurance.LifelistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifelist.app/Lifelist";
+			};
+			name = Debug;
+		};
+		AB54DFBC2465E59E0069B9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J237JQ3KN;
+				INFOPLIST_FILE = LifelistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwarebyassurance.LifelistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifelist.app/Lifelist";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,6 +476,15 @@
 			buildConfigurations = (
 				AB3B542C2002A24200CC9784 /* Debug */,
 				AB3B542D2002A24200CC9784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB54DFBD2465E59E0069B9C9 /* Build configuration list for PBXNativeTarget "LifelistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB54DFBB2465E59E0069B9C9 /* Debug */,
+				AB54DFBC2465E59E0069B9C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
