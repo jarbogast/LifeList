@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode9.2
+osx_image: xcode11.4
 xcode_project: Lifelist.xcodeproj
 xcode_scheme: Lifelist
