@@ -34,6 +34,10 @@ class MapViewController: UIViewController, LifelistController {
         
         do {
             try fetchedResultsController?.performFetch()
+            for sighting in fetchedResultsController!.fetchedObjects! {
+                mapView.addAnnotation(sighting)
+            }
+            mapView.fitAll()
         } catch {
             print("Error while fetching sightings")
         }

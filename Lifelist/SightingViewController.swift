@@ -24,6 +24,11 @@ final class SightingViewController: UIViewController, LifelistController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if navigationController?.viewControllers.count == 1 {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped(_:)))
+        }
+        
         if let species = sighting?.species {
             speciesLabel.text = species.count > 0 ? species : "Species"
         }
@@ -42,7 +47,11 @@ final class SightingViewController: UIViewController, LifelistController {
             }
         }
     }
-
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let species = speciesLabel.text, let context = persistentContainer?.viewContext {
             if sighting == nil { sighting = Sighting(context: context) }
