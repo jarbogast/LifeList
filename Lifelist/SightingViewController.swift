@@ -72,6 +72,7 @@ final class SightingViewController: UIViewController, LifelistController {
 
         if let speciesViewController = segue.destination as? SpeciesViewController {
             speciesViewController.delegate = self
+            distributeModelToViewController(controller: speciesViewController, container: persistentContainer)
         }
     }
 
