@@ -19,6 +19,7 @@ final class DatePickerViewController: UIViewController {
 
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         delegate?.didPick(date: datePicker.date)
+        navigationController?.popViewController(animated: true)
     }
 
 }

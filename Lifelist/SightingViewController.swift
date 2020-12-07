@@ -31,7 +31,9 @@ final class SightingViewController: UIViewController, LifelistController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        speciesLabel.text = sighting?.species
+        if let species = sighting?.species {
+            speciesLabel.text = species.count > 0 ? species : "Species"
+        }
 
         if let date = sighting?.date {
             let formatter = SightingDateFormatter()
@@ -51,7 +53,7 @@ final class SightingViewController: UIViewController, LifelistController {
 
                 let formatter = SightingDateFormatter()
                 sighting.date = formatter.date(from: dateString)
-                sighting.image = imageView.image?.pngData()
+                sighting.image = imageView.image?.jpegData(compressionQuality: 1.0)
 
                 do {
                     try context.save()
