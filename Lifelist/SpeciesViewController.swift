@@ -25,6 +25,7 @@ final class SpeciesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.selected(species: species[indexPath.row])
+        navigationController?.popViewController(animated: true)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -9,23 +9,16 @@
 import Foundation
 import UIKit
 import CoreData
+import Photos
 
 final class SightingViewController: UIViewController, LifelistController {
     var persistentContainer: NSPersistentContainer?
     var sighting: Sighting?
-
-    @IBOutlet weak var speciesLabel: UILabel! {
-        didSet {
-            speciesLabel.layer.cornerRadius = 5
-            speciesLabel.layer.masksToBounds = true
-        }
-    }
-    @IBOutlet weak var dateLabel: UILabel! {
-        didSet {
-            dateLabel.layer.cornerRadius = 5
-            dateLabel.layer.masksToBounds = true
-        }
-    }
+    var location: CLLocation?
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var speciesLabel: UILabel!
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -36,25 +29,34 @@ final class SightingViewController: UIViewController, LifelistController {
         }
 
         if let date = sighting?.date {
-            let formatter = SightingDateFormatter()
-            dateLabel.text = formatter.string(from: date)
+            datePicker.date = date
         }
 
         if let data = sighting?.image, let image = UIImage(data: data) {
             imageView.image = image
         }
+        
+        let status = PHPhotoLibrary.authorizationStatus()
+        if (status == .notDetermined) {
+            PHPhotoLibrary.requestAuthorization { status in
+                
+            }
+        }
     }
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        if let species = speciesLabel.text, let dateString = dateLabel.text, let context = persistentContainer?.viewContext {
+        if let species = speciesLabel.text, let context = persistentContainer?.viewContext {
             if sighting == nil { sighting = Sighting(context: context) }
             if let sighting = sighting {
                 sighting.species = species
-
-                let formatter = SightingDateFormatter()
-                sighting.date = formatter.date(from: dateString)
+                sighting.date = datePicker.date
                 sighting.image = imageView.image?.jpegData(compressionQuality: 1.0)
 
+                if let location = location {
+                    sighting.latitude = location.coordinate.latitude
+                    sighting.longitude = location.coordinate.longitude
+                }
+                
                 do {
                     try context.save()
                 } catch {
@@ -62,6 +64,7 @@ final class SightingViewController: UIViewController, LifelistController {
                 }
             }
         }
+        navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
 
@@ -70,10 +73,6 @@ final class SightingViewController: UIViewController, LifelistController {
 
         if let speciesViewController = segue.destination as? SpeciesViewController {
             speciesViewController.delegate = self
-        }
-
-        if let datePickerViewController = segue.destination as? DatePickerViewController {
-            datePickerViewController.delegate = self
         }
     }
 
@@ -90,6 +89,14 @@ final class SightingViewController: UIViewController, LifelistController {
 extension SightingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         imageView.image = info[.originalImage] as? UIImage
+        if let asset = info[.phAsset] as? PHAsset {
+            if let creationDate = asset.creationDate {
+                datePicker.date = creationDate
+            }
+            
+            location = asset.location
+        }
+        
         picker.dismiss(animated: true, completion: nil)
     }
 }
@@ -100,9 +107,19 @@ extension SightingViewController: SpeciesViewControllerDelegate {
     }
 }
 
-extension SightingViewController: DatePickerViewControllerDelegate {
-    func didPick(date: Date) {
-        let formatter = SightingDateFormatter()
-        dateLabel.text = formatter.string(from: date)
+extension UIImage {
+
+    func getExifData() -> CFDictionary? {
+        var exifData: CFDictionary? = nil
+        if let data = self.jpegData(compressionQuality: 1.0) {
+            data.withUnsafeBytes {
+                let bytes = $0.baseAddress?.assumingMemoryBound(to: UInt8.self)
+                if let cfData = CFDataCreate(kCFAllocatorDefault, bytes, data.count),
+                    let source = CGImageSourceCreateWithData(cfData, nil) {
+                    exifData = CGImageSourceCopyPropertiesAtIndex(source, 0, nil)
+                }
+            }
+        }
+        return exifData
     }
 }

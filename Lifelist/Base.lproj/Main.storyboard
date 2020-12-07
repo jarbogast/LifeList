@@ -54,22 +54,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sighting" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-BP-Lmn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-Rz-QLa">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hL9-U2-izX" appends="YES" id="lks-OR-asx"/>
-                                </connections>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-Rz-QLa">
-                                <rect key="frame" x="16" y="572" width="339" height="75"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEU-Uj-g45">
-                                        <rect key="frame" x="0.0" y="0.0" width="339" height="35"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Sighting" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-BP-Lmn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="346.5"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="hL9-U2-izX" appends="YES" id="lks-OR-asx"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEU-Uj-g45">
+                                        <rect key="frame" x="0.0" y="366.5" width="375" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="lightTextColor"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -80,38 +79,22 @@
                                             <outletCollection property="gestureRecognizers" destination="6yi-5Q-Cqb" appends="YES" id="1zB-Pz-avm"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjX-Cn-M1s">
-                                        <rect key="frame" x="0.0" y="40" width="339" height="35"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="YHU-Kf-DW4" appends="YES" id="k5w-yX-VTP"/>
-                                        </connections>
-                                    </label>
+                                    <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-mT-3ap">
+                                        <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                    </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="3Gf-kV-23H"/>
+                                    <constraint firstItem="k1g-mT-3ap" firstAttribute="width" secondItem="4aU-Rz-QLa" secondAttribute="width" id="0ap-1Z-Kxg"/>
+                                    <constraint firstItem="k1g-mT-3ap" firstAttribute="centerX" secondItem="4aU-Rz-QLa" secondAttribute="centerX" id="Frt-Sj-X2a"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yL0-H0-jpo"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hsj-BP-Lmn" firstAttribute="leading" secondItem="brT-rB-pD2" secondAttribute="leading" id="79N-ib-luF"/>
-                            <constraint firstItem="hsj-BP-Lmn" firstAttribute="bottom" secondItem="yL0-H0-jpo" secondAttribute="bottom" id="9Pm-Gr-JDV"/>
-                            <constraint firstItem="yL0-H0-jpo" firstAttribute="trailing" secondItem="4aU-Rz-QLa" secondAttribute="trailing" constant="20" id="e6r-Hk-QcG"/>
-                            <constraint firstItem="yL0-H0-jpo" firstAttribute="bottom" secondItem="4aU-Rz-QLa" secondAttribute="bottom" constant="20" id="efG-CM-qUO"/>
-                            <constraint firstItem="4aU-Rz-QLa" firstAttribute="leading" secondItem="brT-rB-pD2" secondAttribute="leadingMargin" id="m9c-zM-Rfd"/>
-                            <constraint firstItem="hsj-BP-Lmn" firstAttribute="top" secondItem="brT-rB-pD2" secondAttribute="topMargin" id="n5e-ko-0h7"/>
-                            <constraint firstAttribute="trailing" secondItem="hsj-BP-Lmn" secondAttribute="trailing" id="uOK-4G-sEj"/>
+                            <constraint firstItem="yL0-H0-jpo" firstAttribute="top" secondItem="4aU-Rz-QLa" secondAttribute="top" id="JyQ-qr-c1L"/>
+                            <constraint firstItem="4aU-Rz-QLa" firstAttribute="width" secondItem="yL0-H0-jpo" secondAttribute="width" id="QEX-N0-Tqc"/>
+                            <constraint firstItem="4aU-Rz-QLa" firstAttribute="leading" secondItem="yL0-H0-jpo" secondAttribute="leading" id="VRk-Ft-4TA"/>
+                            <constraint firstItem="4aU-Rz-QLa" firstAttribute="height" secondItem="yL0-H0-jpo" secondAttribute="height" id="gKF-SR-mSG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8AR-YF-Upi">
@@ -122,7 +105,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dateLabel" destination="DjX-Cn-M1s" id="hQc-gJ-qRd"/>
+                        <outlet property="datePicker" destination="k1g-mT-3ap" id="e3p-hL-41G"/>
                         <outlet property="imageView" destination="hsj-BP-Lmn" id="8ui-5c-Y9o"/>
                         <outlet property="speciesLabel" destination="TEU-Uj-g45" id="A8u-Rz-TAK"/>
                     </connections>
@@ -133,18 +116,14 @@
                         <segue destination="aQv-nQ-azZ" kind="show" id="YI3-4F-8qD"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="YHU-Kf-DW4">
-                    <connections>
-                        <segue destination="I3Y-su-9aB" kind="show" id="sNQ-1F-BiC"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YHU-Kf-DW4"/>
                 <tapGestureRecognizer id="hL9-U2-izX">
                     <connections>
                         <action selector="imageViewTapped" destination="Tn6-Jn-xny" id="JCk-fZ-n9l"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1657" y="16"/>
+            <point key="canvasLocation" x="1656.8" y="15.742128935532236"/>
         </scene>
         <!--Sightings-->
         <scene sceneID="aqM-7V-sOW">
@@ -218,48 +197,11 @@
             </objects>
             <point key="canvasLocation" x="2601" y="16"/>
         </scene>
-        <!--Date Picker View Controller-->
-        <scene sceneID="Ojx-fS-mKd">
-            <objects>
-                <viewController id="I3Y-su-9aB" customClass="DatePickerViewController" customModule="Lifelist" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qhJ-vJ-1Uy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="TAa-aI-ksm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </datePicker>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gXg-c7-1CO"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="B19-WH-QbV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WeM-HK-YfE">
-                            <connections>
-                                <action selector="doneButtonTapped:" destination="I3Y-su-9aB" id="Rtk-vK-t4I"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="datePicker" destination="TAa-aI-ksm" id="GYg-xq-iOA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qRR-KE-jDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2601" y="782"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MK6-bc-Kyp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Sighting" width="612" height="792"/>
-        <systemColor name="lightTextColor">
-            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="lightTextColor">
-            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
