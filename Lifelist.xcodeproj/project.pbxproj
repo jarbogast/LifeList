@@ -17,7 +17,6 @@
 		AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */; };
 		AB54DFB72465E59E0069B9C9 /* LifelistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54DFB62465E59E0069B9C9 /* LifelistTests.swift */; };
 		AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */; };
-		AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */; };
 		AB7F9E6721FE3E15000BFDCF /* SightingDateFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */; };
 		ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		AB54DFB62465E59E0069B9C9 /* LifelistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelistTests.swift; sourceTree = "<group>"; };
 		AB54DFB82465E59E0069B9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingViewController.swift; sourceTree = "<group>"; };
-		AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDateFomatter.swift; sourceTree = "<group>"; };
 		ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				AB3B54372002EC3A00CC9784 /* SightingsViewController.swift */,
 				ABCE08D521FCCAAE007F2C72 /* SpeciesViewController.swift */,
 				AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */,
-				AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */,
 				AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */,
 				A21BE967257EACEC00A2F6EE /* MapViewController.swift */,
 			);
@@ -228,7 +225,6 @@
 				A21BE968257EACEC00A2F6EE /* MapViewController.swift in Sources */,
 				ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */,
 				AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */,
-				AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */,
 				AB3B54382002EC3A00CC9784 /* SightingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
