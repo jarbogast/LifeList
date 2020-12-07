@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="1760.8" y="15.742128935532236"/>
         </scene>
-        <!--Sighting View Controller-->
+        <!--Sighting-->
         <scene sceneID="4oP-an-Lco">
             <objects>
                 <viewController id="Tn6-Jn-xny" customClass="SightingViewController" customModule="Lifelist" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                             <constraint firstItem="4aU-Rz-QLa" firstAttribute="height" secondItem="yL0-H0-jpo" secondAttribute="height" id="gKF-SR-mSG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8AR-YF-Upi">
+                    <navigationItem key="navigationItem" title="Sighting" id="8AR-YF-Upi">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Qg9-Kt-YUq">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="Tn6-Jn-xny" id="g9e-u0-X9a"/>
@@ -162,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="2543" y="-733"/>
         </scene>
-        <!--Species View Controller-->
+        <!--Species-->
         <scene sceneID="CkM-sg-MMn">
             <objects>
                 <tableViewController id="aQv-nQ-azZ" customClass="SpeciesViewController" customModule="Lifelist" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,7 +194,7 @@
                             <outlet property="delegate" destination="aQv-nQ-azZ" id="SBE-XQ-33J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jM2-zv-Mdf"/>
+                    <navigationItem key="navigationItem" title="Species" id="jM2-zv-Mdf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dez-DY-qaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,6 +206,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fhZ-FH-3DS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uRh-ep-znn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
