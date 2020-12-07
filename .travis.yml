@@ -1,5 +1,0 @@
-language: objective-c
-osx_image: xcode11.4
-xcode_project: Lifelist.xcodeproj
-xcode_scheme: Lifelist
-xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone 11
