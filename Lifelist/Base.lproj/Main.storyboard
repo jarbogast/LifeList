@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXW-WQ-JhE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fhZ-FH-3DS">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,28 +45,28 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gr-s0-Ba1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="16"/>
+            <point key="canvasLocation" x="1760.8" y="15.742128935532236"/>
         </scene>
         <!--Sighting View Controller-->
         <scene sceneID="4oP-an-Lco">
             <objects>
                 <viewController id="Tn6-Jn-xny" customClass="SightingViewController" customModule="Lifelist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brT-rB-pD2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-Rz-QLa">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Sighting" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-BP-Lmn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="346.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="hL9-U2-izX" appends="YES" id="lks-OR-asx"/>
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEU-Uj-g45">
-                                        <rect key="frame" x="0.0" y="366.5" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="334.5" width="375" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -80,7 +81,7 @@
                                         </connections>
                                     </label>
                                     <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-mT-3ap">
-                                        <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="375" width="375" height="216"/>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
@@ -90,6 +91,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yL0-H0-jpo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yL0-H0-jpo" firstAttribute="top" secondItem="4aU-Rz-QLa" secondAttribute="top" id="JyQ-qr-c1L"/>
                             <constraint firstItem="4aU-Rz-QLa" firstAttribute="width" secondItem="yL0-H0-jpo" secondAttribute="width" id="QEX-N0-Tqc"/>
@@ -123,13 +125,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1656.8" y="15.742128935532236"/>
+            <point key="canvasLocation" x="2596" y="15.742128935532236"/>
         </scene>
         <!--Sightings-->
         <scene sceneID="aqM-7V-sOW">
             <objects>
                 <navigationController id="PXW-WQ-JhE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sightings" id="zv8-D4-Cma"/>
+                    <tabBarItem key="tabBarItem" title="Sightings" image="list.dash" catalog="system" id="zv8-D4-Cma"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MOG-Yk-Va4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,7 +142,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ize-ow-04j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-121" y="16"/>
+            <point key="canvasLocation" x="816.79999999999995" y="15.742128935532236"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5IU-rf-sQ0">
@@ -158,14 +160,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vew-az-Na5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="-743"/>
+            <point key="canvasLocation" x="2543" y="-733"/>
         </scene>
         <!--Species View Controller-->
         <scene sceneID="CkM-sg-MMn">
             <objects>
                 <tableViewController id="aQv-nQ-azZ" customClass="SpeciesViewController" customModule="Lifelist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b85-Wf-gcT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -192,16 +194,38 @@
                             <outlet property="delegate" destination="aQv-nQ-azZ" id="SBE-XQ-33J"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="jM2-zv-Mdf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dez-DY-qaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="16"/>
+            <point key="canvasLocation" x="3540" y="15.742128935532236"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LEb-p3-HUf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fhZ-FH-3DS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uRh-ep-znn">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PXW-WQ-JhE" kind="relationship" relationship="viewControllers" id="itE-F6-mpq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxU-5x-hfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122.40000000000001" y="15.742128935532236"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MK6-bc-Kyp"/>
+        <segue reference="lgx-GD-7WD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Sighting" width="612" height="792"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

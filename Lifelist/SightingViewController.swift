@@ -36,8 +36,7 @@ final class SightingViewController: UIViewController, LifelistController {
             imageView.image = image
         }
         
-        let status = PHPhotoLibrary.authorizationStatus()
-        if (status == .notDetermined) {
+        if (PHPhotoLibrary.authorizationStatus() == .notDetermined) {
             PHPhotoLibrary.requestAuthorization { status in
                 
             }
