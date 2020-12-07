@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21BE968257EACEC00A2F6EE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21BE967257EACEC00A2F6EE /* MapViewController.swift */; };
 		AB3B541B2002A24200CC9784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B541A2002A24200CC9784 /* AppDelegate.swift */; };
 		AB3B54222002A24200CC9784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54202002A24200CC9784 /* Main.storyboard */; };
 		AB3B54242002A24200CC9784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3B54232002A24200CC9784 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21BE967257EACEC00A2F6EE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB3B54172002A24200CC9784 /* Lifelist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifelist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3B541A2002A24200CC9784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB3B54212002A24200CC9784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				AB7F9E6021FD071C000BFDCF /* SightingViewController.swift */,
 				AB7F9E6221FD0BB5000BFDCF /* DatePickerViewController.swift */,
 				AB7F9E6621FE3E15000BFDCF /* SightingDateFomatter.swift */,
+				A21BE967257EACEC00A2F6EE /* MapViewController.swift */,
 			);
 			path = Lifelist;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				AB3B54362002B03500CC9784 /* LifelistController.swift in Sources */,
 				AB3B541B2002A24200CC9784 /* AppDelegate.swift in Sources */,
 				AB3B54302002AAAF00CC9784 /* Lifelist.xcdatamodeld in Sources */,
+				A21BE968257EACEC00A2F6EE /* MapViewController.swift in Sources */,
 				ABCE08D621FCCAAE007F2C72 /* SpeciesViewController.swift in Sources */,
 				AB7F9E6121FD071C000BFDCF /* SightingViewController.swift in Sources */,
 				AB7F9E6321FD0BB5000BFDCF /* DatePickerViewController.swift in Sources */,

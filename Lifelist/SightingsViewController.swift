@@ -139,6 +139,7 @@ extension SightingsViewController: NSFetchedResultsControllerDelegate {
             configure(cell: tableView.cellForRow(at: indexPath!)!, at: indexPath!)
         case .move:
             tableView.deleteRows(at: [indexPath!], with: .fade)
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
         @unknown default:
             fatalError()
         }
