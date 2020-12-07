@@ -17,6 +17,16 @@ protocol SpeciesViewControllerDelegate: class {
 final class SpeciesViewController: UITableViewController, LifelistController {
     weak var delegate: SpeciesViewControllerDelegate?
     var fetchedResultsController: NSFetchedResultsController<Species>?
+    var searchController = UISearchController(searchResultsController: nil)
+    var filteredSpecies = [Species]()
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
 
     var persistentContainer: NSPersistentContainer? {
         didSet {
@@ -35,6 +45,12 @@ final class SpeciesViewController: UITableViewController, LifelistController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SpeciesCell")
 
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Species"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+
         do {
             try fetchedResultsController?.performFetch()
         } catch {
@@ -43,11 +59,15 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let object = self.fetchedResultsController?.object(at: indexPath) else {
-            fatalError("Attempt to configure cell without a managed object")
+        let species: Species
+        
+        if isFiltering {
+            species = filteredSpecies[indexPath.row]
+        } else {
+            species = self.fetchedResultsController!.object(at: indexPath)
         }
         
-        guard let commonName = object.commonName else {
+        guard let commonName = species.commonName else {
             fatalError("Attempt to select species with no name")
         }
 
@@ -56,6 +76,10 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if isFiltering {
+            return 1
+        }
+        
         if let frc = fetchedResultsController {
             return frc.sections!.count
         }
@@ -63,6 +87,10 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredSpecies.count
+        }
+        
         guard let sections = self.fetchedResultsController?.sections else {
             fatalError("No sections in fetchedResultsController")
         }
@@ -77,6 +105,10 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if isFiltering {
+            return nil
+        }
+        
         guard let sectionInfo = fetchedResultsController?.sections?[section] else {
             return nil
         }
@@ -84,10 +116,18 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if isFiltering {
+            return nil
+        }
+        
         return fetchedResultsController?.sectionIndexTitles
     }
 
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        if isFiltering {
+            return 0
+        }
+        
         guard let result = fetchedResultsController?.section(forSectionIndexTitle: title, at: index) else {
             fatalError("Unable to locate section for \(title) at index: \(index)")
         }
@@ -95,12 +135,25 @@ final class SpeciesViewController: UITableViewController, LifelistController {
     }
 
     func configure(cell: UITableViewCell, at indexPath: IndexPath) {
-        guard let object = self.fetchedResultsController?.object(at: indexPath) else {
-            fatalError("Attempt to configure cell without a managed object")
+        let species: Species
+        
+        if isFiltering {
+            species = filteredSpecies[indexPath.row]
+        } else {
+            species = self.fetchedResultsController!.object(at: indexPath)
         }
 
-        cell.textLabel?.text = object.commonName
+        cell.textLabel?.text = species.commonName
     }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredSpecies = fetchedResultsController?.fetchedObjects?.filter { (species: Species) -> Bool in
+            return (species.commonName?.lowercased().contains(searchText.lowercased()) ?? false)
+        } ?? [Species]()
+      
+      tableView.reloadData()
+    }
+
 }
 
 extension SpeciesViewController: NSFetchedResultsControllerDelegate {
@@ -142,3 +195,11 @@ extension SpeciesViewController: NSFetchedResultsControllerDelegate {
         tableView.endUpdates()
     }
 }
+
+extension SpeciesViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
+  }
+}
+
