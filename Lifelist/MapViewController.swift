@@ -35,7 +35,9 @@ class MapViewController: UIViewController, LifelistController {
         do {
             try fetchedResultsController?.performFetch()
             for sighting in fetchedResultsController!.fetchedObjects! {
-                mapView.addAnnotation(sighting)
+                if (CLLocationCoordinate2DIsValid(sighting.coordinate)) {
+                    mapView.addAnnotation(sighting)
+                }
             }
             mapView.fitAll()
         } catch {
@@ -103,7 +105,7 @@ extension MapViewController: NSFetchedResultsControllerDelegate {
 
 extension Sighting: MKAnnotation {
     public var coordinate: CLLocationCoordinate2D {
-        if latitude.isZero || longitude.isZero {
+        if abs(latitude).isLess(than: .leastNormalMagnitude) || abs(longitude).isLess(than: .leastNormalMagnitude) {
             return kCLLocationCoordinate2DInvalid
         }
         

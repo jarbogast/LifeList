@@ -80,7 +80,7 @@
                                             <outletCollection property="gestureRecognizers" destination="6yi-5Q-Cqb" appends="YES" id="1zB-Pz-avm"/>
                                         </connections>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-mT-3ap">
+                                    <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-mT-3ap">
                                         <rect key="frame" x="0.0" y="358" width="375" height="216"/>
                                     </datePicker>
                                 </subviews>
