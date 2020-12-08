@@ -46,16 +46,24 @@ class MapViewController: UIViewController, LifelistController {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
-
         let identifier = "Annotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
 
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
+            annotationView!.clusteringIdentifier = "Sighting"
         } else {
             annotationView!.annotation = annotation
+            annotationView!.clusteringIdentifier = "Sighting"
+        }
+        
+        if let sighting = annotation as? Sighting, let imageData = sighting.image {
+            let imageView = UIImageView(image: UIImage(data: imageData))
+            imageView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            annotationView?.leftCalloutAccessoryView = imageView
+        } else {
+            annotationView?.leftCalloutAccessoryView = nil
         }
 
         return annotationView
