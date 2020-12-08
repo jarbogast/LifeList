@@ -58,6 +58,11 @@ final class SightingViewController: UIViewController, LifelistController {
             if let sighting = sighting {
                 sighting.species = species
                 sighting.date = datePicker.date
+                
+                let calendar = Calendar.current
+                let components = calendar.dateComponents([.year, .month], from: datePicker.date)
+                sighting.yearAndMonth = calendar.date(from: components)!
+                
                 sighting.image = imageView.image?.jpegData(compressionQuality: 1.0)
 
                 if let location = location {

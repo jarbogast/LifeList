@@ -16,11 +16,11 @@ class SightingsViewController: UITableViewController, LifelistController {
     var persistentContainer: NSPersistentContainer? {
         didSet {
             let fetchRequest = NSFetchRequest<Sighting>(entityName: "Sighting")
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "species", ascending: true)]
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "yearAndMonth", ascending: false), NSSortDescriptor(key: "species", ascending: true)]
             if let context = persistentContainer?.viewContext {
                 fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                       managedObjectContext: context,
-                                                                      sectionNameKeyPath: nil, cacheName: nil)
+                                                                      sectionNameKeyPath: "yearAndMonth", cacheName: nil)
                 fetchedResultsController?.delegate = self
             }
         }
@@ -70,7 +70,11 @@ class SightingsViewController: UITableViewController, LifelistController {
         guard let sectionInfo = fetchedResultsController?.sections?[section] else {
             return nil
         }
-        return sectionInfo.name
+
+        let firstSighting = sectionInfo.objects![0] as! Sighting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        return dateFormatter.string(from: firstSighting.yearAndMonth!)
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -107,6 +111,15 @@ class SightingsViewController: UITableViewController, LifelistController {
         }
 
         cell.textLabel?.text = object.species
+        
+        if let date = object.date {
+            let formatter = SightingDateFormatter()
+            cell.detailTextLabel?.text = formatter.string(from: date)
+        }
+        
+        if let imageData = object.image {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
     }
 }
 
